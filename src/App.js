@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Li from './components/Li';
 
 function App() {
+  const list = ['item 1', 'item 2', 'item 3', 'item 4', 'item 5'];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className='container'>
+      {
+        <ul className='list-container'>
+          {list.map((e, index) => (
+            <Li key={index} parent={e}></Li>
+          ))}
+        </ul>
+      }
+    </section>
   );
 }
 
