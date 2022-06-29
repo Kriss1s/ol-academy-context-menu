@@ -9,7 +9,7 @@ const randomDarkColor = () => {
   return color;
 };
 
-export default function Li({ parent }) {
+export default function Container({ parent }) {
   const color = randomDarkColor();
   const ref = useRef();
   const contextMenuRef = useRef();
@@ -22,7 +22,7 @@ export default function Li({ parent }) {
       setIsVisible(true);
       setPosXY({ x: e.pageX, y: e.pageY });
     });
-  });
+  }, []);
 
   useEffect(() => {
     const handleHideMenu = e => {
